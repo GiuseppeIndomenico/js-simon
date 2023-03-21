@@ -47,18 +47,31 @@ function start(e) {
         <button id="result"  class="btn btn-danger m-auto">Verifica!</button>
         </div>
      `
-     const btnResult = document.getElementById('result')
-     console.log(btnResult);
-     btnResult.addEventListener('click', playerResult)
-     //tramite un tasto per avviare la funzione, attiviaso un ciclo e raccogliamo i vari numeri inseriti dall'utente;
-     function playerResult() {
-         const input= document.querySelectorAll('input')
-      //    console.log(input);
-            for (let i=0; i < input.length; i++){
-               let numPlayer = input[i].value
-               console.log(numPlayer);
+        const btnResult = document.getElementById('result')
+        //console.log(btnResult);
+        btnResult.addEventListener('click', playerResult)
+        //tramite un tasto per avviare la funzione, attiviaso un ciclo e raccogliamo i vari numeri inseriti dall'utente;
+        function playerResult() {
+            const input = document.querySelectorAll('input')
+            let indovinati = 0
+            //    console.log(input);
+            for (let i = 0; i < input.length; i++) {
+                let numPlayer = input[i].value;
+                console.log(numPlayer);
+                for (let k = 0; k < numbers.length; k++) {
+                    const number = numbers[k];
+                    if (numPlayer.includes(number)) {
+                        // console.log('il numero è giusto');
+                        indovinati++
+                    }
+                }
+
             }
-     }
+            content.innerHTML= `<h1>complimenti! ne hai indovinati: ${indovinati}</h1>
+            
+            `
+
+        }
     }
 }
 

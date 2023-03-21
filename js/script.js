@@ -21,13 +21,35 @@ function start(e) {
             }
         }
         return numbers;
-    
-    }
-    let numbers = numGenerator(100, numSimon);
-    //console.log(numbers);
-    content.innerHTML= `<h1>${numbers} </h1>`
 
-    
+    }
+    let numbers = numGenerator(99, numSimon);
+    //console.log(numbers);
+    const time = setTimeout(timeOut, 3000)
+    content.innerHTML = `<h1>${numbers} </h1>`
+
+    function timeOut() {
+
+        content.innerHTML = `  <div clas="card-header">
+                                    <h1 class="text-center">inserisci negli spazi i numeri che ricordi! </h1>
+                                </div>
+        <div class="card-body">
+            <input type="number">
+            <input type="number">
+            <input type="number">
+            <input type="number">
+            <input type="number">
+
+        </div>
+        <div class="card-footer d-flex  align-items-center justify-center">
+        <button class="btn btn-danger m-auto">Verifica!</button>
+        </div>
+
+
+     `
+    const input= document.querySelectorAll('input');
+     console.log(input);
+    }
 }
 
 

@@ -24,10 +24,11 @@ function start(e) {
 
     }
     let numbers = numGenerator(99, numSimon);
-    //console.log(numbers);
+    console.log(numbers);
     //dopodichè settiamo untimeout che faccia comparire gli input e scomparire i numeri dallo schermo 
     const time = setTimeout(timeOut, 3000)
-    content.innerHTML = `<h1>${numbers} </h1>`
+    content.innerHTML = `<h1>Questi sono i numeri da ricordare!</h1>
+    <h2 class="text-center">${numbers} </h2>`
 
     function timeOut() {
 
@@ -45,8 +46,6 @@ function start(e) {
         <div class="card-footer d-flex  align-items-center justify-center">
         <button id="result"  class="btn btn-danger m-auto">Verifica!</button>
         </div>
-
-
      `
      const btnResult = document.getElementById('result')
      console.log(btnResult);

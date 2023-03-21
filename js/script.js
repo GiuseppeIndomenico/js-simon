@@ -4,7 +4,30 @@
 
 
 const content = document.getElementById('content');
+const btnStart = document.querySelector('button');
+btnStart.addEventListener('click', start);
+//creiamo un evento che faccia parte la generazione dei numeri casuali e che li mostri alla persona su schermo
+function start(e) {
+    e.preventDefault();
 
+    const numSimon = 5;
+    function numGenerator(num, simonIndex) {
+        let numbers = [];
+        while (numbers.length < simonIndex) {
+            let randomNumber = Math.floor((Math.random() * num));
 
+            if (!numbers.includes(randomNumber)) {
+                numbers.push(randomNumber);
+            }
+        }
+        return numbers;
+    
+    }
+    let numbers = numGenerator(100, numSimon);
+    //console.log(numbers);
+    content.innerHTML= `<h1>${numbers} </h1>`
+
+    
+}
 
 

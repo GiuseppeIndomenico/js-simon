@@ -25,6 +25,7 @@ function start(e) {
     }
     let numbers = numGenerator(99, numSimon);
     //console.log(numbers);
+    //dopodichè settiamo untimeout che faccia comparire gli input e scomparire i numeri dallo schermo 
     const time = setTimeout(timeOut, 3000)
     content.innerHTML = `<h1>${numbers} </h1>`
 
@@ -42,13 +43,23 @@ function start(e) {
 
         </div>
         <div class="card-footer d-flex  align-items-center justify-center">
-        <button class="btn btn-danger m-auto">Verifica!</button>
+        <button id="result"  class="btn btn-danger m-auto">Verifica!</button>
         </div>
 
 
      `
-    const input= document.querySelectorAll('input');
-     console.log(input);
+     const btnResult = document.getElementById('result')
+     console.log(btnResult);
+     btnResult.addEventListener('click', playerResult)
+     //tramite un tasto per avviare la funzione, attiviaso un ciclo e raccogliamo i vari numeri inseriti dall'utente;
+     function playerResult() {
+         const input= document.querySelectorAll('input')
+      //    console.log(input);
+            for (let i=0; i < input.length; i++){
+               let numPlayer = input[i].value
+               console.log(numPlayer);
+            }
+     }
     }
 }
 

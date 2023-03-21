@@ -26,7 +26,7 @@ function start(e) {
     let numbers = numGenerator(99, numSimon);
     console.log(numbers);
     //dopodichè settiamo untimeout che faccia comparire gli input e scomparire i numeri dallo schermo 
-    const time = setTimeout(timeOut, 3000)
+    const time = setTimeout(timeOut, 30000)
     content.innerHTML = `<h1>Questi sono i numeri da ricordare!</h1>
     <h2 class="text-center">${numbers} </h2>`
 
